@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+		<title>Programando &mdash; C</title>
+		<meta name="description" content="Free Bootstrap 4 Theme by uicookies.com">
+		<meta name="keywords" content="free website templates, free bootstrap themes, free template, free bootstrap, free website template">
+    
+    <link href="https://fonts.googleapis.com/css?family=Crimson+Text:400,400i,600|Work+Sans:400,600" rel="stylesheet">
+
+		<link rel="stylesheet" href="assets/css/bootstrap/bootstrap.css">
+    <link rel="stylesheet" href="assets/css/animate.css">
+    <link rel="stylesheet" href="assets/fonts/ionicons/css/ionicons.min.css">
+
+    <link rel="stylesheet" href="assets/fonts/fontawesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="assets/css/slick.css">
+    <link rel="stylesheet" href="assets/css/slick-theme.css">
+
+    <link rel="stylesheet" href="assets/css/helpers.css">
+    <link rel="stylesheet" href="assets/css/style.css">
+
+	</head>
+	<body>
+    
+    <header class="probootstrap-header">
+      <a class="probootstrap-logo" href="index.html">
+        <h1>Início</h1>
+      </a>
+      <nav class="probootsrap-nav">
+        <ul>
+          <li><a href="index.html">O início</a></li>
+          <li><a href="what-we-do.html">Atribuição</a></li>
+          <li class="active"><a href="about.html">Condição</a></li>
+          <li><a href="contact.html">Repetição</a></li>
+        </ul>
+      </nav>
+    </header>
+    
+    <main class="probootstrap-main">
+
+      <section class="probootstrap-bg probootstrap-animate" data-animate-effect="fadeInLeft" style="background-image: url(../../imgs/codigo.jpg);"></section>
+
+      <section class="probootstrap-animate mb-5">
+        <h1 class="mb-4 text-primary">Estrutura de decisão if em Linguagem C</h1>
+        <p>Uma estrutura de decisão examina uma ou mais condições e decide quais instruções serão executadas dependendo se a condição foi ou não foi.<br> O comando if é uma estrutura de decisão muito utilizada.</p>
+        <h1 class="mb-4 text-primary">Exemplo de programa utilizando estrutura de decisão</h1>
+        <p>Elaborar um programa em linguagem C para somar dois números inteiros e mostrar o valor da soma na tela. Caso a soma dos números seja maior que 10 mostrar uma mensagem informativa na tela.<br>
+            <div  style="background-color: lightgrey; border: 1px; width: 50%; overflow: auto">
+<pre><code>   
+#include &#60stdio.h&#62
+#include &#60stdlib.h&#62
+int main(void)
+
+{
+    int A, B, Soma;
+    printf("Digite um numero inteiro: ");
+    scanf("%d", &amp;A);
+    printf("Digite um numero inteiro: ");
+    scanf("%d", &amp;B);
+    Soma = A + B;
+    printf ("O Valor da soma = %d", Soma);
+    if(Soma > 10)
+    {
+       printf("O valor da soma é maior que 10\n");
+
+    }
+
+    system ("PAUSE");
+    return(0);
+}
+
+        </code></pre></div>
+
+
+        </p>
+        <p style="font-weight: bold;"><br>TELA DE EXECUÇÃO:</p>
+        <div><img src="../../imgs/exemploif.jpg"></div>
+        <p>Observe que somente será escrito na tela “O valor da soma é maior que 10” SE a condição (Soma > 10) for verdadeira. Caso a condição seja falsa os comandos que estão dentro do if serão ignorados.</p>
+
+        <h1 class="mb-4 text-primary">Estrutura de decisão if else</h1>
+        <p>Agora vamos modificar o código do exemplo anterior com o intuito de enviar uma mensagem informando também quando a soma é menor ou igual a 10.<br>
+
+Para tanto, o pseudocódigo seria:<br>
+
+Se (Soma > 10) então<br>
+Escreva(“Valor maior que 10”);<br>
+Senão<br>
+Escreva(“Valor menor ou igual a 10”);<br>
+
+Sendo assim, vamos executar uma determinada instrução se a condição for satisfeita ou outra instrução quando a condição for falsa.
+
+O senão simboliza a negação da condição, logo está ligado à instrução que será executada quando a condição for falsa.</p>
+
+<div  style="background-color: lightgrey; border: 1px; width: 50%; overflow: auto">
+<pre><code>   
+#include &#60stdio.h&#62
+#include &#60stdlib.h&#62
+int main(void)
+{
+    int A, B, Soma;
+    printf("Digite um numero inteiro: ");
+    scanf("%d", &amp;A);
+    printf("Digite um numero inteiro: ");
+    scanf("%d", &amp;B);
+    Soma = A + B;
+    printf("O Valor da soma = %d\n", Soma);
+    if(Soma > 10)
+    {
+       printf("O valor da soma e maior que 10\n");
+    }
+    else
+       {
+           printf("Valor menor ou igual a 10\n");
+       }
+    system("PAUSE");
+    return(0);
+}
+
+        </code></pre></div>
+        <p style="font-weight: bold;"><br>TELA DE EXECUÇÃO:</p>
+        <div><img src="../../imgs/exemploif2.jpg"></div>
+    
+      </section>
+
+    </main>
+    
+    <script src="assets/js/jquery.min.js"></script>
+    
+    <script src="assets/js/popper.min.js"></script>
+    <script src="assets/js/bootstrap.min.js"></script>
+    <script src="assets/js/slick.min.js"></script>
+
+    <script src="assets/js/jquery.waypoints.min.js"></script>
+    <script src="assets/js/jquery.easing.1.3.js"></script>
+
+    <script src="assets/js/main.js"></script>
+    
+	</body>
+</html>

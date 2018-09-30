@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+		<title>Programando &mdash; C</title>
+		<meta name="description" content="Free Bootstrap 4 Theme by uicookies.com">
+		<meta name="keywords" content="free website templates, free bootstrap themes, free template, free bootstrap, free website template">
+    
+    <link href="https://fonts.googleapis.com/css?family=Crimson+Text:400,400i,600|Work+Sans:400,600" rel="stylesheet">
+
+		<link rel="stylesheet" href="assets/css/bootstrap/bootstrap.css">
+    <link rel="stylesheet" href="assets/css/animate.css">
+    <link rel="stylesheet" href="assets/fonts/ionicons/css/ionicons.min.css">
+
+    <link rel="stylesheet" href="assets/fonts/fontawesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="assets/css/slick.css">
+    <link rel="stylesheet" href="assets/css/slick-theme.css">
+
+    <link rel="stylesheet" href="assets/css/helpers.css">
+    <link rel="stylesheet" href="assets/css/style.css">
+
+	</head>
+	<body>
+    
+    <header class="probootstrap-header">
+      <a class="probootstrap-logo" href="index.html">
+        <h1>Início</h1>
+      </a>
+      <nav class="probootsrap-nav">
+        <ul>
+          <li><a href="index.html">O início</a></li>
+          <li><a href="what-we-do.html">Atribuição</a></li>
+          <li><a href="about.html">Condição</a></li>
+          <li class="active"><a href="contact.html">Repetição</a></li>
+        </ul>
+      </nav>
+    </header>
+    
+    <main class="probootstrap-main">
+
+      <section class="probootstrap-bg probootstrap-animate" data-animate-effect="fadeInLeft" style="background-image: url(../../imgs/codigo.jpg);"></section>
+
+      <section class="probootstrap-animate mb-5">
+        <h1 class="mb-4 text-primary">Estrutura de repetição for</h1>
+        <p>Denominamos “laço” (loop em inglês) a uma estrutura de repetição. <br> As estruturas de repetição, executam a repetição de um conjunto de instruções enquanto uma determinada condição é verdadeira.<br>
+Em linguagem C, existem três estruturas de repetição, são elas: for, while e do…while.
+Cada uma destas estruturas tem a sua particularidade em termos de funcionamento.</p>
+        <h1 class="mb-4 text-primary">Utilização do comando for</h1>
+        <p>O laço for é uma estrutura de repetição muito utilizada nos programas em C.<br>
+É muito útil quando se sabe de antemão quantas vezes a repetição deverá ser executada.<br>
+Este laço utiliza uma variável para controlar a contagem do loop, bem como seu incremento.<br>
+Trata-se de um comando bem enxuto, já que própria estrutura faz a inicialização, incremento e encerramento do laço.<br>
+            <div  style="background-color: lightgrey; border: 1px; width: 70%; overflow: auto">
+<pre><code>   
+#include &#60stdio.h&#62
+#include &#60stdlib.h&#62
+int main(void)
+{
+  int contador; //variável de controle do loop
+  for(contador = 1; contador <= 10; contador++)
+  {
+      printf("%d ", contador);
+  }
+  getch();
+  return(0);
+}
+
+
+        </code></pre></div>
+
+
+        </p>
+        <p style="font-weight: bold;"><br>Explicação:</p>
+        <p>Neste primeiro exemplo podemos observar três coisas sobre o funcionamento da estrutura de repetição for:<br>
+1- Primeiramente o contador foi inicializado com um valor determinado;<br>
+2- Depois testamos se a condição que envolve o contador é verdadeira (ou seja  se contador <= 10), em caso afirmativo, a repetição continua; caso - contrário,  ela será encerrada; <br>
+3- A cada nova repetição a variável do contador foi incrementada.</p>
+
+<h1 class="mb-4 text-primary">Estrutura de repetição while</h1>
+        <p>Executa a repetição de um bloco de instruções enquanto uma condição é verdadeira.</p>
+        <h1 class="mb-4 text-primary">Utilizando o comando while em linguagem C</h1>
+        <div  style="background-color: lightgrey; border: 1px; width: 70%; overflow: auto">
+        <pre><code>   
+#include &#60stdio.h&#62
+#include &#60stdlib.h&#62
+int main(void)
+{
+  int contador = 1; //declarando e inicializando a variável de controle
+  while (contador <= 10) // Testando a condição
+{
+  printf("%d ", contador); //Executando um comando dentro do laço
+  contador++; //atualizando a variável de controle
+    }
+    getch();
+    return 0;
+}
+
+
+
+        </code></pre></div>
+
+
+        </p>
+        <p style="font-weight: bold;"><br>Explicação:</p>
+        <p>Inicialmente, a variável de controle denominada contador foi declarada e inicializada com o valor 1.<br>
+ O teste da condição while é realizado , e como o contador é menor que 10, então a condição é verdadeira.<br>
+ Como a condição é verdadeira, o programa entra dentro do corpo do laço e executa o printf, exibindo o valor da variável contador.<br>
+ Após executar o comando printf, o contador é incrementado.<br>
+ Depois do incremento, a condição é testada novamente e enquanto for verdadeira, os comandos são executados de novo, até que a condição se torne falsa.</p>
+ <p style="font-weight: bold;"><br>TELA DE EXECUÇÃO:</p>
+        <div><img src="../../imgs/exemploif3.jpg"></div>
+
+    
+      </section>
+
+    </main>
+
+    
+    <script src="assets/js/jquery.min.js"></script>
+    
+    <script src="assets/js/popper.min.js"></script>
+    <script src="assets/js/bootstrap.min.js"></script>
+    <script src="assets/js/slick.min.js"></script>
+
+    <script src="assets/js/jquery.waypoints.min.js"></script>
+    <script src="assets/js/jquery.easing.1.3.js"></script>
+
+    <script src="assets/js/main.js"></script>
+	</body>
+</html>
