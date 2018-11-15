@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8" />
+	<title>Calculadora de Juros</title>
+	<link rel="stylesheet" type="text/css" href="main.css" />
+
+</head>
+<body  style=" background-color: #086A87;">
+	<script src="main.js"></script>
+
+	<div style="width: 800px;height: 500px;background-color: grey; margin-left: 25%; margin-top: 10%; font-family: calibri; font-weight: bold; font-size: 30px; overflow: auto; border-style: dotted;" >
+		
+		<input type="text" id="C" onchange="preenchido[0]=true" onkeypress='return event.charCode >= 48 && event.charCode <= 57 || event.charCode == 46'>   Capital Inicial</input><br>
+		<input type="text" id="I" onchange="preenchido[1]=true" onkeypress='return event.charCode >= 48 && event.charCode <= 57 || event.charCode == 46'>   % Juros</input><br>
+        <input type="text" id="T" onchange="preenchido[2]=true" onkeypress='return event.charCode >= 48 && event.charCode <= 57 '>    Tempo</input><br>
+        <input type="radio" name="gender" onchange="preenchido[3]=true" value="Dia">Dias
+        <input type="radio" name="gender" onchange="preenchido[3]=true" value="Mês" >Meses
+        <input type="radio" name="gender" onchange="preenchido[3]=true" value="Ano">Anos
+        <br><br>
+        <button onclick="Atribuir()" class="button">Calcular</button><br><br>
+
+        <div id="resultado" style="overflow-y: auto;"></div>
+
+
+
+
+	</div>
+
+</body>
+</html>

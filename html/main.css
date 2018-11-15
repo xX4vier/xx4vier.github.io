@@ -1,0 +1,29 @@
+#resultado{
+    text-align: center;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 28px;
+}
+
+.button {
+    background-color: #f44336; /* Green */
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+    margin-left:20%;
+    margin-bottom: 10%;}
+
+    .container {
+03         width: 1000px;
+04         height: 500px;
+05         background: #6C7A89;
+06         display: flex;
+07         flex-direction: row;
+08         justify-content: center;
+09         align-items: center;
+10     }
