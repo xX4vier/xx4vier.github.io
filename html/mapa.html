@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html>
+<meta charset="utf-8" /> 
+<head>
+	 
+	 <link rel="stylesheet" href="https://unpkg.com/leaflet@1.3.4/dist/leaflet.css"
+   integrity="sha512-puBpdR0798OZvTTbP4A8Ix/l+A4dHDD0DGqYW6RQ+9jxkRFclaxxQb/SJAWZfWAkuyeQUytO7+7N4QKrDh+drA=="
+   crossorigin=""/>
+
+   <script src="https://unpkg.com/leaflet@1.3.4/dist/leaflet.js"
+   integrity="sha512-nMMmRyTVoLYqjP9hrbed9S+FzjZHW5gY1TWCHA5ckwXZBadntCNs8kEqAWdrb9O7rxbCaA4lKTIWjDXZxflOcA=="
+   crossorigin="">
+   	
+   </script>
+
+   <title>GEOLOCALIZAÇÃO</title>
+
+   <style type="text/css">
+
+   #map 
+   { 
+ 
+   		height: 700px;
+   		width: 50%;
+   		float: left; 
+
+   }
+
+   #body1
+   {
+   	background-color: lightgrey;
+
+   }
+
+   .frase
+
+   {
+
+   	font-size: 40px;
+   	font-family: calibri;
+   	font-weight: bold;
+   	font-style: italic;
+   }
+
+   .frase2
+
+   {
+
+   	font-size: 20px;
+   	font-family: calibri;
+   }
+
+   #footer
+   {
+   	margin-left: -10px;
+   	position: absolute;
+   	background-color: grey;
+   	width: 120%;
+   	height: 100px;
+   	bottom: 0;
+
+   }
+
+   .footer1
+   {
+   	font-size: 40px;
+   	font-family: calibri;
+   	font-weight: bold;
+   	font-style: italic;
+   	margin-left: 30%;
+
+   }
+</style>
+
+
+
+
+</head>
+<body id="body1">
+   <div id="map"></div>
+   <div style="float: left; margin-left: 40px">
+<h1 class="frase">Insira os dados para que uma reta seja traçada no mapa ao lado:</h1>
+	<hr>
+	<h2 class="frase2">Sua latitude:</h2>
+	<input id="latitude"  type="txt" name="latitude" >
+	<h2 class="frase2">Sua longitude:</h2>
+	<input id="longitude"  type="txt" name="longitude">
+	<h2 class="frase2">Latitude do destino:</h2>
+	<input id="latitude2"  type="txt" name="latitude">
+	<h2 class="frase2">Longitude do destino:</h2>
+	<input id="longitude2"  type="txt" name="longitude"><br><br>
+	<button id="btn_buscar" class="bt">Procurar</button>
+</div>
+<div id="footer">
+	<h2 class="footer1">GEOLOCALIZAÇÃO - INTRODUÇÃO A MULTIMIDIA WEB</h2>
+</div>
+
+
+   <script>
+
+   	 navigator.geolocation.getCurrentPosition(f1);
+
+function f1(pos){
+	console.log(pos);
+	var lat = pos.coords.latitude;
+	var long = pos.coords.longitude;
+
+	mymap.setView([lat,long],14)
+}
+
+function init(){
+	btn = document.getElementById("btn_buscar");
+	btn.addEventListener("click", f2);
+	return;
+}
+
+function f2(pos){
+	console.log(pos);
+	var latitude = Number(document.getElementById("latitude").value);
+	var longitude = Number(document.getElementById("longitude").value);
+	mymap.setView([latitude,longitude],13)
+
+	var latitude2 = Number(document.getElementById("latitude2").value);
+	var longitude2 = Number(document.getElementById("longitude2").value);
+
+var polygon = L.polygon([
+    [latitude,longitude],
+    [latitude2,longitude2]
+]).addTo(mymap);
+}
+
+
+
+var mymap = L.map('map').setView([51.505, -0.09], 13);
+L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token={accessToken}', {
+    attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors, <a href="https://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
+    maxZoom: 18,
+    id: 'mapbox.streets',
+    accessToken: 'pk.eyJ1IjoibHVza2FzZG1jIiwiYSI6ImNqb2U1aGc2aDE0YXEza280a3c1aTdjYnMifQ.THYQxiVZIzibXfKlVM00hg'
+}).addTo(mymap);
+init();
+
+   </script>
+
+</body>
+</html>
